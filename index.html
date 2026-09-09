@@ -325,60 +325,57 @@
       font-weight: bold;
     }
 
-    .booking {
+    .map-card {
       margin-top: 50px;
-      background: linear-gradient(135deg, #ffffff, #eef9ff);
-      border: 1px solid #dfeaf3;
+      background: white;
       border-radius: 20px;
-      padding: 30px;
+      padding: 20px;
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
     }
 
-    .booking h2 {
+    .map-card h2 {
       margin-top: 0;
       font-size: 32px;
     }
 
-    form {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+    .map-image {
+      width: 100%;
+      height: 420px;
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #dfeaf3;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.12)),
+        repeating-linear-gradient(0deg, rgba(120, 143, 161, 0.08) 0, rgba(120, 143, 161, 0.08) 1px, transparent 1px, transparent 22px),
+        repeating-linear-gradient(90deg, rgba(120, 143, 161, 0.08) 0, rgba(120, 143, 161, 0.08) 1px, transparent 1px, transparent 22px),
+        linear-gradient(135deg, #edf8ff 0%, #dfeefb 42%, #d9f4ef 100%);
     }
 
-    .field {
+    .map-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(97, 157, 255, 0.12), transparent 20%),
+        radial-gradient(circle at 75% 25%, rgba(59, 130, 246, 0.12), transparent 18%),
+        linear-gradient(180deg, rgba(9, 34, 55, 0.08), rgba(9, 34, 55, 0.02));
+    }
+
+    .route-overlay {
+      position: absolute;
+      inset: 0;
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-weight: bold;
-      color: #243447;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
     }
 
-    .field input,
-    .field select,
-    .field textarea {
-      border: 1px solid #d8e3ee;
-      border-radius: 10px;
-      padding: 12px 14px;
-      font: inherit;
-      background: white;
-    }
-
-    .field textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .submit {
-      grid-column: 1 / -1;
-      margin-top: 8px;
-      background: #2a9d8f;
-      color: white;
-      padding: 14px 20px;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
+    .route-overlay svg {
+      width: 96%;
+      height: 85%;
+      opacity: 0.98;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
     }
 
     ul {
@@ -548,36 +545,26 @@
       </div>
     </section>
 
-    <section class="booking">
-      <h2>Book Your Coastal Road Trip</h2>
-      <form>
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" type="text" placeholder="Your name" />
+    <section class="map-card">
+      <h2>Route Overview</h2>
+      <div class="map-image">
+        <div class="route-overlay">
+          <svg viewBox="0 0 700 420" aria-label="Route map with route line">
+            <path d="M90 305 C145 278, 190 255, 240 232 S315 198, 394 210 S490 190, 560 150 S620 112, 650 84" fill="none" stroke="#2a9d8f" stroke-width="9" stroke-linecap="round" stroke-dasharray="12 16"/>
+            <path d="M90 305 C145 278, 190 255, 240 232 S315 198, 394 210 S490 190, 560 150 S620 112, 650 84" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="90" cy="305" r="12" fill="#2a9d8f" stroke="#ffffff" stroke-width="4"/>
+            <circle cx="240" cy="232" r="12" fill="#2a9d8f" stroke="#ffffff" stroke-width="4"/>
+            <circle cx="394" cy="210" r="12" fill="#2a9d8f" stroke="#ffffff" stroke-width="4"/>
+            <circle cx="560" cy="150" r="12" fill="#2a9d8f" stroke="#ffffff" stroke-width="4"/>
+            <circle cx="650" cy="84" r="12" fill="#2a9d8f" stroke="#ffffff" stroke-width="4"/>
+            <text x="42" y="342" fill="#13314d" font-size="22" font-weight="700">Melbourne</text>
+            <text x="206" y="214" fill="#13314d" font-size="16" font-weight="700">Gippsland</text>
+            <text x="346" y="188" fill="#13314d" font-size="16" font-weight="700">Canberra</text>
+            <text x="500" y="131" fill="#13314d" font-size="16" font-weight="700">Jervis Bay</text>
+            <text x="597" y="62" fill="#13314d" font-size="22" font-weight="700">Sydney</text>
+          </svg>
         </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" type="email" placeholder="Your email" />
-        </div>
-        <div class="field">
-          <label for="dates">Travel Dates</label>
-          <input id="dates" type="text" placeholder="e.g. 12-17 Sep" />
-        </div>
-        <div class="field">
-          <label for="people">Travellers</label>
-          <select id="people">
-            <option>2 people</option>
-            <option>3 people</option>
-            <option>4 people</option>
-            <option>5+ people</option>
-          </select>
-        </div>
-        <div class="field" style="grid-column: 1 / -1;">
-          <label for="notes">Trip Notes</label>
-          <textarea id="notes" placeholder="Tell us your preferred stops, budget, or accommodation style"></textarea>
-        </div>
-        <button class="submit" type="submit">Request My Trip</button>
-      </form>
+      </div>
     </section>
   </div>
 </body>
