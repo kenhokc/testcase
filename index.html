@@ -161,7 +161,7 @@
 
     .day-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin-top: 24px;
     }
@@ -190,6 +190,31 @@
     .day h3 {
       margin: 0 0 8px;
       font-size: 22px;
+    }
+
+    .time-blocks {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .time-block {
+      background: #f8fbff;
+      border: 1px solid #e5edf4;
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+
+    .time-block strong {
+      display: inline-block;
+      min-width: 44px;
+      color: #0f766e;
+      font-size: 14px;
+    }
+
+    .time-block span {
+      font-size: 15px;
+      line-height: 1.5;
     }
 
     .day p {
@@ -330,31 +355,51 @@
         <div class="day">
           <div class="day-number">Day 1</div>
           <h3>Melbourne to Gippsland</h3>
-          <p>Start in Melbourne and take the scenic eastbound route toward Gippsland. Enjoy a relaxed brunch in a local café, stop at coastal lookouts, and rest in a charming seaside town for the night.</p>
+          <div class="time-blocks">
+            <div class="time-block"><strong>AM:</strong> <span>Leave Melbourne and drive east through the scenic Gippsland route.</span></div>
+            <div class="time-block"><strong>PM:</strong> <span>Stop for a long lunch at a seaside café, explore a coastal lookout, and enjoy a relaxed beach walk.</span></div>
+            <div class="time-block"><strong>Night:</strong> <span>Stay in a coastal Airbnb or holiday park cabin in Gippsland, with a simple beachside setup and sunset views.</span></div>
+          </div>
         </div>
 
         <div class="day">
           <div class="day-number">Day 2</div>
           <h3>Gippsland to Canberra</h3>
-          <p>Drive through open countryside and stop for coffee in regional towns. Spend the afternoon in Canberra with lakeside walks, gardens, and a slow evening before heading further south.</p>
+          <div class="time-blocks">
+            <div class="time-block"><strong>AM:</strong> <span>Have a slow breakfast and continue inland through rolling countryside.</span></div>
+            <div class="time-block"><strong>PM:</strong> <span>Arrive in Canberra, visit Lake Burley Griffin, and stop at a relaxed café for lunch.</span></div>
+            <div class="time-block"><strong>Night:</strong> <span>Stay in a moderate-cost Airbnb or serviced apartment in Canberra near the lakefront or city centre.</span></div>
+          </div>
         </div>
 
         <div class="day">
           <div class="day-number">Day 3</div>
           <h3>Canberra to Jervis Bay</h3>
-          <p>Continue toward Jervis Bay, one of the most beautiful coastal stretches on the route. Take time for beach walks, swim breaks, and a scenic café stop overlooking the water.</p>
+          <div class="time-blocks">
+            <div class="time-block"><strong>AM:</strong> <span>Drive toward the coast and stop for coffee in a small town along the way.</span></div>
+            <div class="time-block"><strong>PM:</strong> <span>Spend the afternoon at Jervis Bay beach, swimming, walking, and enjoying ocean-view dining.</span></div>
+            <div class="time-block"><strong>Night:</strong> <span>Stay in a family-friendly holiday park cabin or Airbnb close to the beach for a relaxed coastal night.</span></div>
+          </div>
         </div>
 
         <div class="day">
           <div class="day-number">Day 4</div>
           <h3>Jervis Bay to Batemans Bay</h3>
-          <p>Keep the pace easy as you travel north along the NSW coast. Visit cliff-top views, local coffee shops, and quiet coves before settling in Batemans Bay for the evening.</p>
+          <div class="time-blocks">
+            <div class="time-block"><strong>AM:</strong> <span>Start with a slow morning and scenic coastal drive north along the NSW shoreline.</span></div>
+            <div class="time-block"><strong>PM:</strong> <span>Stop at lookout points, beachside cafés, and small harbour towns before reaching Batemans Bay.</span></div>
+            <div class="time-block"><strong>Night:</strong> <span>Opt for a budget-friendly Airbnb or holiday park stay in Batemans Bay with easy beach access and simple comforts.</span></div>
+          </div>
         </div>
 
         <div class="day">
           <div class="day-number">Day 5</div>
           <h3>Batemans Bay to Sydney</h3>
-          <p>On your final day, enjoy one last coastal café stop and scenic lookout before arriving in Sydney. End the trip with harbour views and a relaxed arrival into the city.</p>
+          <div class="time-blocks">
+            <div class="time-block"><strong>AM:</strong> <span>Enjoy a relaxed breakfast and one last scenic stop before heading toward Sydney.</span></div>
+            <div class="time-block"><strong>PM:</strong> <span>Arrive in Sydney and spend the afternoon exploring harbour-side cafés or a beachside neighbourhood.</span></div>
+            <div class="time-block"><strong>Night:</strong> <span>Finish with a moderate-cost Airbnb or holiday park stay in Sydney near Manly, Bondi, or the harbour for easy city access.</span></div>
+          </div>
         </div>
       </div>
 
