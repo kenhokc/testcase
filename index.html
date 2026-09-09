@@ -65,15 +65,23 @@
     }
 
     .hero {
-      background: #ffffff;
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.2)),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       border-radius: 20px;
       padding: 40px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      color: white;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .tag {
       display: inline-block;
-      background: #e0f2fe;
+      background: rgba(224, 242, 254, 0.9);
       color: #0f766e;
       font-weight: bold;
       border-radius: 999px;
@@ -82,6 +90,7 @@
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      width: fit-content;
     }
 
     h1 {
@@ -347,6 +356,7 @@
       border: 1px solid #dfeaf3;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.12)),
+        url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat,
         repeating-linear-gradient(0deg, rgba(120, 143, 161, 0.08) 0, rgba(120, 143, 161, 0.08) 1px, transparent 1px, transparent 22px),
         repeating-linear-gradient(90deg, rgba(120, 143, 161, 0.08) 0, rgba(120, 143, 161, 0.08) 1px, transparent 1px, transparent 22px),
         linear-gradient(135deg, #edf8ff 0%, #dfeefb 42%, #d9f4ef 100%);
