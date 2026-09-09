@@ -146,6 +146,43 @@
       font-size: 32px;
     }
 
+    .map-wrap {
+      margin-top: 24px;
+      background: linear-gradient(180deg, #132238, #0d1b2a);
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .map-svg {
+      width: 100%;
+      height: 320px;
+      display: block;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #eaf7ff, #d9f0ff 50%, #cfe9fa);
+    }
+
+    .map-label {
+      font-size: 13px;
+      font-weight: bold;
+      fill: #0f172a;
+    }
+
+    .map-dot {
+      fill: #2a9d8f;
+      stroke: #ffffff;
+      stroke-width: 3;
+    }
+
+    .map-line {
+      fill: none;
+      stroke: #2a9d8f;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 10 10;
+    }
+
     .itinerary {
       margin-top: 50px;
       background: white;
@@ -288,6 +325,62 @@
       font-weight: bold;
     }
 
+    .booking {
+      margin-top: 50px;
+      background: linear-gradient(135deg, #ffffff, #eef9ff);
+      border: 1px solid #dfeaf3;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .booking h2 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-weight: bold;
+      color: #243447;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      border: 1px solid #d8e3ee;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font: inherit;
+      background: white;
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .submit {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      background: #2a9d8f;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     ul {
       padding-left: 20px;
       font-size: 18px;
@@ -346,6 +439,22 @@
         <li>Enjoy a slower detour to Jervis Bay for turquoise water and coastal calm.</li>
         <li>Arrive in Sydney with the harbour in view and a long, easy final stretch behind you.</li>
       </ul>
+
+      <div class="map-wrap">
+        <svg class="map-svg" viewBox="0 0 800 320" aria-label="Melbourne to Sydney road trip route">
+          <path d="M80 230 C140 200, 180 180, 220 165 S310 138, 370 150 S470 175, 560 145 S650 90, 720 70" class="map-line"/>
+          <circle class="map-dot" cx="80" cy="230" r="8"/>
+          <circle class="map-dot" cx="220" cy="165" r="8"/>
+          <circle class="map-dot" cx="370" cy="150" r="8"/>
+          <circle class="map-dot" cx="560" cy="145" r="8"/>
+          <circle class="map-dot" cx="720" cy="70" r="8"/>
+          <text x="48" y="255" class="map-label">Melbourne</text>
+          <text x="185" y="145" class="map-label">Gippsland</text>
+          <text x="332" y="128" class="map-label">Canberra</text>
+          <text x="520" y="125" class="map-label">Jervis Bay</text>
+          <text x="676" y="53" class="map-label">Sydney</text>
+        </svg>
+      </div>
     </section>
 
     <section id="itinerary" class="itinerary">
@@ -437,6 +546,38 @@
           <span>Beach Days</span>
         </div>
       </div>
+    </section>
+
+    <section class="booking">
+      <h2>Book Your Coastal Road Trip</h2>
+      <form>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Your email" />
+        </div>
+        <div class="field">
+          <label for="dates">Travel Dates</label>
+          <input id="dates" type="text" placeholder="e.g. 12-17 Sep" />
+        </div>
+        <div class="field">
+          <label for="people">Travellers</label>
+          <select id="people">
+            <option>2 people</option>
+            <option>3 people</option>
+            <option>4 people</option>
+            <option>5+ people</option>
+          </select>
+        </div>
+        <div class="field" style="grid-column: 1 / -1;">
+          <label for="notes">Trip Notes</label>
+          <textarea id="notes" placeholder="Tell us your preferred stops, budget, or accommodation style"></textarea>
+        </div>
+        <button class="submit" type="submit">Request My Trip</button>
+      </form>
     </section>
   </div>
 </body>
